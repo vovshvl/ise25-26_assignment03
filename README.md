@@ -66,5 +66,33 @@ curl --header "Content-Type: application/json" --request POST --data '{"name":"N
 
 Update title and description:
 ```shell
-curl --header "Content-Type: application/json" --request PUT --data '{"id":4,"name":"New coffee","description":"Great croissants","type":"CAFE","campus":"ALTSTADT","street":"Hauptstraße","houseNumber":"95","postalCode":69117,"city":"Heidelberg"}' http://localhost:8080/api/pos/4 # set correct POS id here and in the body
+ curl --header "Content-Type: application/json" \
+     --request POST \
+     --data '{"name":"# Bäckerei Kohlmann","description":"Do not use unless mensa is closed","type":"CAFE","campus":"INF","street":"INF","houseNumber":"370","postalCode":69120,"city":"Heidelberg"}' \
+     http://localhost:8080/api/pos
+{"id":6,"createdAt":"2025-11-05T20:25:36.8906479","updatedAt":"2025-11-05T20:25:36.8906479","name":"# Backerei Kohlmann","description":"Do not use unless mensa is closed","type":"CAFE","campus":"INF","street":"INF","houseNumber":"370","postalCode":69120,"city":"Heidelberg"}
+~curl http://localhost:8080/api/pos/6                                                                                                            
+                                                                                                                        
+                                                                                                                                                                                  
+StatusCode        : 200             letWebResponseException,Microsoft.PowerShell.Commands.In 
+StatusDescription : mand
+Content           : {"id":6,"createdAt":"2025-11-05T20:25:36.890648","updatedAt":"2025-11-05T20:25:36.890648","name":"# Backerei Kohlmann","description":"Do not use unless mensa is 
+                    closed","type":"CAFE","campus":"INF","s...
+RawContent        : HTTP/1.1 200 
+                    Transfer-Encoding: chunked
+                    Keep-Alive: timeout=60
+                    Connection: keep-alive
+                    Content-Type: application/json
+                    Date: Wed, 05 Nov 2025 20:29:58 GMT
+                    
+                    {"id":6,"createdAt":"2025-11-05T20:25:...
+Forms             : {}
+Headers           : {[Transfer-Encoding, chunked], [Keep-Alive, timeout=60], [Connection, keep-alive], [Content-Type, application/json]...}
+Images            : {}
+InputFields       : {}
+Links             : {}
+ParsedHtml        : mshtml.HTMLDocumentClass
+RawContentLength  : 272
+
+
 ```
